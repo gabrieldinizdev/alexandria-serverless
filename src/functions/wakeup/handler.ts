@@ -7,14 +7,17 @@ type WakeUpInputHandlerType = {
 };
 
 const wakeUp = async (baseUrl: string) => {
+  console.log("fazendo requisição para o backend...");
   await axios.get(`${baseUrl}/health/wake-up`);
 };
 
 const handler = async (input: WakeUpInputHandlerType) => {
   try {
     const { url } = input;
+    console.log("chamando função wakeup...");
     await wakeUp(url);
 
+    console.log("finalizando requisição...");
     return formatJSONResponse({
       message: "successfull",
     });
