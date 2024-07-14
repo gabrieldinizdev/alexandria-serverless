@@ -11,7 +11,7 @@ const settings: SettingsFunctions = {
   events: [
     {
       schedule: {
-        rate: ["cron(0/1 * * * ? *)"], // every 5 minutes
+        rate: ["cron(0/5 * * * ? *)"], // every 5 minutes
         input: {
           url: "${env:BASE_URL}",
         },
